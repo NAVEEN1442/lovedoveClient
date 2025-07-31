@@ -72,7 +72,8 @@ const Header = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="tel:08369841539"
+              href="tel:9987223678
+"
               className="flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
             >
               <Phone className="h-4 w-4 mr-2" />
@@ -102,7 +103,7 @@ const Header = () => {
               </button>
             ))}
             <a
-              href="tel:08369841539"
+              href="tel:9987223678"
               className="flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-200 mx-4"
             >
               <Phone className="h-4 w-4 mr-2" />

@@ -39,7 +39,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5" />
               </a>
               <a
-                href="tel:08369841539"
+                href="tel:9987223678"
                 className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-green-400 hover:text-green-300 hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
               >
                 <Phone className="h-5 w-5" />
@@ -70,15 +70,15 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-purple-400 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
                   <p className="font-medium text-white">Address:</p>
-                  <p>Holy cross church, Juhu Koliwada</p>
-                  <p>Santacruz (West), Mumbai 400049</p>
+                  <p>Santacruz & Virar</p>
+                  
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-green-400" />
                 <div className="text-gray-300">
                   <p className="font-medium text-white">Phone:</p>
-                  <p>083698 41539</p>
+                  <p>9987223678</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

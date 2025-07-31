@@ -77,7 +77,7 @@ const Services = () => {
           
           <div className="relative p-6 sm:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center mb-6">
-              <div className={`bg-gradient-to-br ${service.gradient} p-4 rounded-2xl text-white shadow-lg mb-4 sm:mb-0`}>
+              <div className={`bg-gradient-to-br ${service.gradient} p-4  rounded-2xl text-white shadow-lg mb-4 sm:mb-0`}>
                 {service.icon}
               </div>
               <div className="sm:ml-4">
@@ -103,7 +103,7 @@ const Services = () => {
             </div>
 
             <a
-              href="tel:08369841539"
+              href="tel:9987223678"
               className={`w-full bg-gradient-to-r ${service.gradient} text-white py-3 px-5 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 text-center block transform hover:scale-105 text-sm sm:text-base`}
             >
               Book This Service

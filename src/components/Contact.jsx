@@ -43,12 +43,7 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-gray-900 ml-4">Phone Numbers</h3>
               </div>
               <div className="space-y-4">
-                <div className="p-4 bg-gray-50 rounded-2xl">
-                  <p className="font-semibold text-gray-900">Main Line</p>
-                  <a href="tel:08369841539" className="text-purple-600 hover:text-purple-700 text-lg font-medium">
-                    083698 41539
-                  </a>
-                </div>
+                
                 <div className="p-4 bg-gray-50 rounded-2xl">
                   <p className="font-semibold text-gray-900">Lavie</p>
                   <a href="tel:9987223678" className="text-purple-600 hover:text-purple-700 text-lg font-medium">
@@ -56,7 +51,7 @@ const Contact = () => {
                   </a>
                 </div>
                 <div className="p-4 bg-gray-50 rounded-2xl">
-                  <p className="font-semibold text-gray-900">Clara Aunty</p>
+                  <p className="font-semibold text-gray-900">Clara</p>
                   <a href="tel:8369841539" className="text-purple-600 hover:text-purple-700 text-lg font-medium">
                     8369841539
                   </a>
@@ -73,32 +68,14 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-gray-900 ml-4">Location</h3>
               </div>
               <div className="p-4 bg-gray-50 rounded-2xl space-y-4">
-                <p className="text-gray-700 leading-relaxed">
-                  Holy Cross Church, Juhu Koliwada,<br />
-                  Santacruz (West),<br />
-                  Mumbai, Maharashtra 400049
-                </p>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Holy+Cross+Church,+Juhu+Koliwada,+Santacruz+(West),+Mumbai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-purple-600 hover:text-purple-700 font-semibold flex items-center"
-                >
-                  Get Directions
-                  <MapPin className="h-4 w-4 ml-1" />
-                </a>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-md">
-                  <iframe
-                    title="Google Map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.642409689428!2d72.826889!3d19.123262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9bd1f7bdf0b%3A0xccc62f7d23c9dbfd!2sHoly%20Cross%20Church%2C%20Juhu%20Koliwada!5e0!3m2!1sen!2sin!4v1710165218572"
-                    width="100%"
-                    height="100%"
-                    frameBorder="0"
-                    allowFullScreen=""
-                    loading="lazy"
-                  ></iframe>
+                <div className="bg-gray-700 p-4 rounded-lg shadow text-white leading-relaxed">
+                  <p>Santacruz</p>
+                </div>
+                <div className="bg-gray-700 p-4 rounded-lg shadow text-white leading-relaxed">
+                  <p>Virar</p>
                 </div>
               </div>
+
             </div>
 
             {/* Email + Social Media */}
@@ -166,7 +143,7 @@ const Contact = () => {
             <div className="mt-8 pt-6 border-t border-gray-200 text-center">
               <p className="text-gray-600 mb-4">Ready to book your pet's stay?</p>
               <a
-                href="tel:08369841539"
+                href="tel:9987223678"
                 className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-6 rounded-2xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 block text-center transform hover:scale-105 shadow-lg"
               >
                 📞 Call Now to Book

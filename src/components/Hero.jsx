@@ -57,7 +57,7 @@ const Hero = () => {
                   <MapPin className="h-6 w-6 text-pink-400" />
                   <div>
                     <p className="font-semibold text-white">Location</p>
-                    <p className="text-sm text-white/80">Juhu, Santacruz West</p>
+                    <p className="text-sm text-white/80">Santacruz & Virar</p>
                   </div>
                 </div>
               </div>
@@ -66,7 +66,8 @@ const Hero = () => {
                   <Phone className="h-6 w-6 text-purple-400" />
                   <div>
                     <p className="font-semibold text-white">Call Us</p>
-                    <p className="text-sm text-white/80">083698 41539</p>
+                    <p className="text-sm text-white/80">9987223678
+</p>
                   </div>
                 </div>
               </div>
@@ -74,7 +75,7 @@ const Hero = () => {
 
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <a
-                href="tel:08369841539"
+                href="tel:9987223678"
                 className="group bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl text-center flex items-center justify-center"
               >
                 Book Your Pet's Stay
