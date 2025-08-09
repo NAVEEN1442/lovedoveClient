@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
+/* Font Family */
+.font-figma {
+  font-family: 'Patrick Hand', cursive;
+}
 
 
 
