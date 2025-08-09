@@ -1,11 +1,18 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 /* Font Family */
 .font-figma {
-  font-family: 'Kalam', cursive;
+  font-family: 'Indie Flower', cursive;
 }
+
+.font-figma {
+  font-family: 'Indie Flower', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 
 /* Custom Animations */
