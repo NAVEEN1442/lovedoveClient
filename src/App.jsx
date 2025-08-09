@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Phone, Mail, MapPin, Clock, Star, Shield, Home, Users, ChevronDown, Menu, X, Dog, Cat, Bird, Rabbit, ArrowRight, CheckCircle, Award, Sparkles, Instagram, Camera, Grid, ChevronLeft, ChevronRight } from 'lucide-react';
 import logo from './assets/logo.png';
-import hero from './assets/hero.mp4';
-import hero2 from './assets/hero2.mp4';
-import hero3 from './assets/hero3.mp4';
 
-const videos = [hero, hero2, hero3];
+
 
 function App() {
+
+  const hero = "https://res.cloudinary.com/dxpm4uj4t/video/upload/v1754746152/AQPJ3qQHFS7ZHiv6G2A37GIrUM7BWaOUkcqUFGpvxqKC53p4GQAjWZztV61zDTde_GIhXQHSH1ivhf1ccYG9c6NnN5lkWaN5tgAiDxc_1_u0hh4o.mp4";
+  const hero2 = "https://res.cloudinary.com/dxpm4uj4t/video/upload/v1754746158/AQMJeJxpkwJ6-pvEAX1yG1k7-Gm5N0fGFx5xGMKH3GCcbXEIii3JSxSX9iCGYRJRepIAkdBq41y47sISiEXAnrsGsX0-imi1_ctMWD4_cwei50.mp4";
+  const hero3 = "https://res.cloudinary.com/dxpm4uj4t/video/upload/v1754746159/AQN1WgB1_j8On6W6v1iMyuVFtXdSj_r0_m2uLlPW0rpjWaecASs0v-nbsGuUwTu3LcEJMVSMHYK3c_yqTfZrjuhCcy5RaZ24Y-Hl6j4_oiehbq.mp4";
+
+  const videos = [hero, hero2, hero3];
+
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isVisible, setIsVisible] = useState(false);
