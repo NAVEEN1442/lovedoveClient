@@ -1,13 +1,19 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Aladin&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Caveat:wght@400..700&family=Chelsea+Market&family=Finger+Paint&family=Irish+Grover&family=Itim&family=Jura:wght@300..700&family=Liu+Jian+Mao+Cao&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
 
 /* Font Family */
 .font-figma {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Aladin', cursive;
 }
 
-
+.font-figma {
+  font-family: 'Aladin', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 /* Custom Animations */
 @keyframes float {

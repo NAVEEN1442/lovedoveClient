@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Phone, Mail, MapPin, Clock, Star, Shield, Home, Users, ChevronDown, Menu, X, Dog, Cat, Bird, Rabbit, ArrowRight, CheckCircle, Award, Sparkles, Instagram, Camera, Grid, ChevronLeft, ChevronRight } from 'lucide-react';
 import logo from './assets/logo.png';
+import Testimonials from './components/Testimonails';
 
 
 
 function App() {
+
+  
 
   const hero = "https://res.cloudinary.com/dxpm4uj4t/video/upload/v1754746152/AQPJ3qQHFS7ZHiv6G2A37GIrUM7BWaOUkcqUFGpvxqKC53p4GQAjWZztV61zDTde_GIhXQHSH1ivhf1ccYG9c6NnN5lkWaN5tgAiDxc_1_u0hh4o.mp4";
   const hero2 = "https://res.cloudinary.com/dxpm4uj4t/video/upload/v1754746158/AQMJeJxpkwJ6-pvEAX1yG1k7-Gm5N0fGFx5xGMKH3GCcbXEIii3JSxSX9iCGYRJRepIAkdBq41y47sISiEXAnrsGsX0-imi1_ctMWD4_cwei50.mp4";
@@ -28,71 +31,45 @@ const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   };
 
 
-  // Gallery images
+  // 1. Create a state variable to control visibility
+  const [showTeam, setShowTeam] = useState(false);
+
+
+// Gallery images
 const galleryImages = [
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743546/WhatsApp_Image_2025-08-09_at_18.12.20_1f7fbe44_zzxvod.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743541/WhatsApp_Image_2025-08-02_at_08.35.17_7b433eba_vzf59o.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743541/WhatsApp_Image_2025-08-02_at_08.35.10_4b125262_k3hetn.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743541/WhatsApp_Image_2025-08-02_at_08.35.11_6d4a68d0_ihhsis.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743541/WhatsApp_Image_2025-08-02_at_08.35.07_d36b3af4_v2nwbm.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743541/WhatsApp_Image_2025-08-02_at_08.35.06_4f8d080c_o45l6x.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743541/WhatsApp_Image_2025-08-02_at_08.33.59_0592c5d3_ycgs6z.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743541/WhatsApp_Image_2025-08-01_at_22.05.25_f1108d63_qcu1ou.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743540/WhatsApp_Image_2025-08-01_at_22.05.24_0a136bdf_nnmvgk.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743540/WhatsApp_Image_2025-08-01_at_22.05.25_cb387d85_h7topf.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743540/WhatsApp_Image_2025-08-01_at_22.05.24_a2df03bf_ffprft.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743540/WhatsApp_Image_2025-08-01_at_21.51.47_0bb16fe3_ejkzwf.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743536/IMG-20250802-WA0017_aqlqof.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743536/IMG-20250802-WA0016_mciwdy.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743535/IMG-20250801-WA0092_duqlto.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743535/IMG-20250801-WA0091_rwglph.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743535/IMG-20250801-WA0088_s9czvy.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743534/IMG-20250801-WA0090_fycp8m.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743534/IMG-20250801-WA0089_yumxgm.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743534/IMG-20250801-WA0086_ej8oeg.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743534/IMG-20250801-WA0087_kxestk.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743529/IMG-20250801-WA0075_tqtsvo.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743528/IMG-20250801-WA0085_eizgdd.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743528/IMG-20250801-WA0077_ajylbs.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743528/IMG-20250801-WA0084_qz3qk2.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743506/IMG-20250801-WA0027_hnxfiw.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743506/IMG-20250801-WA0030_uzbmcc.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743506/IMG-20250801-WA0024_mkhqw3.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743506/IMG-20250801-WA0023_jbgjnr.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743505/IMG-20250801-WA0022_sffbrr.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743505/IMG-20250801-WA0021_g766sh.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743505/IMG-20250801-WA0029_zr9dqv.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743507/IMG-20250801-WA0032_j8znzb.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743507/IMG-20250801-WA0031_szejic.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743507/IMG-20250801-WA0033_xhtjgh.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743507/IMG-20250801-WA0035_tfgdkd.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743507/IMG-20250801-WA0026_xisb2j.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743507/IMG-20250801-WA0034_pfasws.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743507/IMG-20250801-WA0036_lpw8fm.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743508/IMG-20250801-WA0037_fslab5.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743508/IMG-20250801-WA0038_rlm6du.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743508/IMG-20250801-WA0040_qdfoig.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743509/IMG-20250801-WA0041_glmtgw.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743509/IMG-20250801-WA0042_osyraf.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743509/IMG-20250801-WA0043_lqwz88.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743509/IMG-20250801-WA0044_jizzta.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743509/IMG-20250801-WA0046_wy0kcn.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743510/IMG-20250801-WA0051_ce7smb.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743510/IMG-20250801-WA0053_ncgnhn.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743510/IMG-20250801-WA0052_vn6auv.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743510/IMG-20250801-WA0054_men7nl.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743511/IMG-20250801-WA0056_um8civ.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743518/IMG-20250801-WA0061_x4blz8.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743519/IMG-20250801-WA0065_ndw6cg.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743519/IMG-20250801-WA0064_rng38y.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743519/IMG-20250801-WA0062_c6xydf.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743520/IMG-20250801-WA0066_mnaj8k.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743521/IMG-20250801-WA0063_tctwud.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743520/IMG-20250801-WA0070_ru7u2c.jpg" },
-  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743525/IMG-20250801-WA0073_g3z1jp.jpg" }
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750835/WhatsApp_Image_2025-08-09_at_19.46.25_d7e7dc8a_ykev4x.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750832/WhatsApp_Image_2025-08-09_at_18.12.20_18c49850_zaho5w.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750769/IMG-20250801-WA0026_csbgxr.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750831/IMG-20250802-WA0016_e5axav.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750828/IMG-20250801-WA0091_bwu4cr.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750831/IMG-20250802-WA0015_figkcz.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750827/IMG-20250801-WA0090_fedtqb.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750824/IMG-20250801-WA0086_gp8b7z.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750820/IMG-20250801-WA0081_sgztck.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750820/IMG-20250801-WA0080_phr4vo.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750820/IMG-20250801-WA0079_vkzdei.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750819/IMG-20250801-WA0077_g6xcc4.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750819/IMG-20250801-WA0075_zy4lok.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750816/IMG-20250801-WA0073_boka61.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750817/IMG-20250801-WA0074_onv3ci.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750768/IMG-20250801-WA0020_n1aawr.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750816/IMG-20250801-WA0072_rp2tw2.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750815/IMG-20250801-WA0071_kgksfq.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750815/IMG-20250801-WA0070_harwxn.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750812/IMG-20250801-WA0066_otwl42.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750812/IMG-20250801-WA0064_q8dfi5.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750809/IMG-20250801-WA0060_qhknhz.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750809/IMG-20250801-WA0058_zjfzud.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750808/IMG-20250801-WA0056_xzemvj.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750805/IMG-20250801-WA0052_pbfcjg.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750778/IMG-20250801-WA0051_u8xerb.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750776/IMG-20250801-WA0046_cfcdux.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750774/IMG-20250801-WA0043_xtfhxx.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750774/IMG-20250801-WA0042_xgfdh7.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750772/IMG-20250801-WA0037_acmm3s.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750770/IMG-20250801-WA0035_uomcr6.jpg" },
+  { url: "https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750769/IMG-20250801-WA0027_b3arie.jpg" }
 ];
-
-
 
   useEffect(() => {
     setIsVisible(true);
@@ -348,11 +325,13 @@ const galleryImages = [
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fadeInLeft">
               <div className="relative rounded-2xl overflow-hidden shadow-xl group">
-                <img 
-                  src="https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743546/WhatsApp_Image_2025-08-09_at_18.12.20_1f7fbe44_zzxvod.jpg" 
-                  alt="Pet care professionals" 
-                  className="w-full h-64 sm:h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                <div class="flex items-center justify-center">
+                  <img 
+                    src="https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754749381/WhatsApp_Image_2025-08-09_at_19.46.25_b43f0e8f_bhwqoo.jpg" 
+                    alt="Pet care professionals" 
+                    className="w-full h-64 sm:h-120 object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#F875AA]/30 to-[#F44366]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
@@ -606,9 +585,9 @@ const galleryImages = [
             <div className="animate-fadeInLeft">
               <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                 <img 
-                  src="https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754743512/IMG-20250801-WA0058_sbj2u0.jpg" 
+                  src="https://res.cloudinary.com/dxpm4uj4t/image/upload/v1754750856/WhatsApp_Image_2025-08-09_at_20.08.34_74e3f22a_u6mf9p.jpg" 
                   alt="Pet care philosophy" 
-                  className="w-full h-64 sm:h-100 object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-84 sm:h-150 object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#F875AA]/20 to-[#F44366]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-sm font-semibold text-[#F44366] animate-pulse">
@@ -712,6 +691,8 @@ const galleryImages = [
         </div>
       </section>
 
+      <Testimonials/>
+
       {/* Booking Section */}
       <section id="booking" className="py-20 bg-gradient-to-br from-[#FDDDE6]/30 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -799,38 +780,52 @@ const galleryImages = [
             {/* Contact Details */}
             <div className="animate-fadeInLeft">
               <div className="space-y-8">
-                <div className="bg-[#FDDDE6] p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  <h3 className="text-lg sm:text-xl font-semibold text-[#F44366] mb-4 flex items-center">
-                    <Sparkles className="h-6 w-6 mr-2 animate-spin-slow" />
-                    Leadership Team
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center group hover:scale-105 transition-transform duration-300">
-                      <button 
-                        onClick={() => handlePhoneCall('+919987223678')}
-                        className="flex items-center group-hover:text-[#F44366] transition-colors duration-300"
-                      >
-                        <Phone className="h-5 w-5 text-[#F875AA] mr-3 group-hover:animate-bounce" />
-                        <div>
-                          <p className="font-semibold text-gray-800">Lavie (Founder & CEO)</p>
-                          <p className="text-gray-600">+91 99872 23678</p>
-                        </div>
-                      </button>
-                    </div>
-                    <div className="flex items-center group hover:scale-105 transition-transform duration-300">
-                      <button 
-                        onClick={() => handlePhoneCall('+919821481749')}
-                        className="flex items-center group-hover:text-[#F44366] transition-colors duration-300"
-                      >
-                        <Phone className="h-5 w-5 text-[#F875AA] mr-3 group-hover:animate-bounce" />
-                        <div>
-                          <p className="font-semibold text-gray-800">Clara (Managing Director)</p>
-                          <p className="text-gray-600">+91 98214 81749</p>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
+                <div className="flex justify-center">
+      {/* 2. Conditionally render the button or the team card */}
+      {showTeam ? (
+        // Team Card (revealed on click)
+        <div className="bg-[#FDDDE6] p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-full max-w-md">
+          <h3 className="text-lg sm:text-xl font-semibold text-[#F44366] mb-4 flex items-center">
+            <Sparkles className="h-6 w-6 mr-2 animate-spin-slow" />
+            Leadership Team
+          </h3>
+          <div className="space-y-4">
+            <div className="flex items-center group hover:scale-105 transition-transform duration-300">
+              <button 
+                onClick={() => handlePhoneCall('+919987223678')}
+                className="flex items-center group-hover:text-[#F44366] transition-colors duration-300"
+              >
+                <Phone className="h-5 w-5 text-[#F875AA] mr-3 group-hover:animate-bounce" />
+                <div>
+                  <p className="font-semibold text-gray-800">Lavie (Founder & CEO)</p>
+                  <p className="text-gray-600">+91 99872 23678</p>
                 </div>
+              </button>
+            </div>
+            <div className="flex items-center group hover:scale-105 transition-transform duration-300">
+              <button 
+                onClick={() => handlePhoneCall('+919821481749')}
+                className="flex items-center group-hover:text-[#F44366] transition-colors duration-300"
+              >
+                <Phone className="h-5 w-5 text-[#F875AA] mr-3 group-hover:animate-bounce" />
+                <div>
+                  <p className="font-semibold text-gray-800">Clara (Managing Director)</p>
+                  <p className="text-gray-600">+91 98214 81749</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        // "Book Now" Button (displayed initially)
+        <button
+          onClick={() => setShowTeam(true)}
+          className="bg-[#F44366] text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-[#F875AA] transition-all duration-300 transform hover:-translate-y-1 text-xl"
+        >
+          Book Now
+        </button>
+      )}
+    </div>
 
                 <div className="bg-[#FDDDE6] p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <h3 className="text-lg sm:text-xl font-semibold text-[#F44366] mb-4 flex items-center">
@@ -896,7 +891,7 @@ const galleryImages = [
                   <div className="bg-[#FDDDE6] p-6 rounded-xl hover:scale-105 transition-all duration-300 group">
                     <div className="flex items-center mb-3">
                       <MapPin className="h-6 w-6 text-[#F44366] mr-2 group-hover:animate-bounce" />
-                      <h4 className="text-lg font-semibold text-[#F44366]">Santacruz (West)</h4>
+                      <h4 className="text-lg font-semibold text-[#F44366]">Santacruz </h4>
                     </div>
                     <p className="text-gray-700 text-sm">
                       Centrally located and easy to access. Perfect for quick visits and regular boarding.
@@ -906,7 +901,7 @@ const galleryImages = [
                   <div className="bg-[#FDDDE6] p-6 rounded-xl hover:scale-105 transition-all duration-300 group">
                     <div className="flex items-center mb-3">
                       <MapPin className="h-6 w-6 text-[#F44366] mr-2 group-hover:animate-bounce" />
-                      <h4 className="text-lg font-semibold text-[#F44366]">Virar (West)</h4>
+                      <h4 className="text-lg font-semibold text-[#F44366]">Virar </h4>
                     </div>
                     <p className="text-gray-700 text-sm">
                       Quieter, more spacious environment ideal for longer stays and pets who need extra space.
@@ -934,16 +929,25 @@ const galleryImages = [
           </div>
 
           {/* CTA */}
-          <div className="text-center mt-16 animate-fadeInUp">
-            <button 
-              onClick={() => handlePhoneCall('+919987223678')}
-              className="group bg-gradient-to-r from-[#F44366] to-[#F875AA] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 mx-auto"
-            >
-              <Phone className="h-5 w-5 group-hover:animate-bounce" />
-              <span>Contact Us Today</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </button>
-          </div>
+          <div className="text-center flex justify-center items-center mt-16 animate-fadeInUp space-x-4">
+              <button 
+                onClick={() => handlePhoneCall('+919987223678')}
+                className="group bg-gradient-to-r from-[#F44366] to-[#F875AA] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+              >
+                <Phone className="h-5 w-5 group-hover:animate-bounce" />
+                <span>Contact Us (Lavie)</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+
+              <button 
+                onClick={() => handlePhoneCall('+919821481749')}
+                className="group bg-gradient-to-r from-[#F44366] to-[#F875AA] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+              >
+                <Phone className="h-5 w-5 group-hover:animate-bounce" />
+                <span>Contact Us (Clara)</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
         </div>
       </section>
 
